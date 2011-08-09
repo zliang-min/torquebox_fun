@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    title TorqueBox Fun
+  body
+    h1 Gimi Rocks!
+    section
+      p Load Paths
+      ul
+        - $:.each do |path|
+          li= path
+    script src="http://snackjs.com/builds/snack-min.js" type="text/javascript"
+    javascript:
+      snack.ready(function() {
+        var wsUri = "#{{TorqueBox::WebSockets.lookup('echo')}}";
+        var ws = new WebSocket(wsUri);
+        ws.onopen = function(evt) {
+          ws.send("hello, this is Gimi.")
+        };
+        ws.onmessage = function(evt) {
+          alert("The server says: " + evt.data)
+        };
+      });

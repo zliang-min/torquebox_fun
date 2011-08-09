@@ -1,0 +1,1 @@
+TorqueBox::Logger.new([application_name : String | class : Class])

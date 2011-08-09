@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export TORQUEBOX_HOME=/usr/local/src/download/torquebox
+export JBOSS_HOME=$TORQUEBOX_HOME/jboss
+export JRUBY_HOME=/usr/local/rvm/rubies/jruby-1.6.3
