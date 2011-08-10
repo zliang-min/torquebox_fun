@@ -10,4 +10,8 @@ class Gimi < Sinatra::Base
   get '/' do
     slim :index, :layout => false
   end
+
+  get '/slides' do
+    slim :slides, :layout => false
+  end
 end

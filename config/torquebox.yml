@@ -1,4 +1,6 @@
 ---
+web:
+  static: public
 environment:
   RUBYLIB: /usr/local/src/personal_staff/jruby/torquebox_fun/web_sockets
 websockets:
