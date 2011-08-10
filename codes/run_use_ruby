@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'rbconfig'
+
+puts `scala -classpath #{Config::CONFIG['libdir']}/jruby.jar use_ruby.scala`
