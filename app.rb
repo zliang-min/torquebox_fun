@@ -14,4 +14,13 @@ class Gimi < Sinatra::Base
   get '/slides' do
     slim :slides, :layout => false
   end
+
+  get '/jruby' do
+    slim :jruby, :layout => false, :pretty => true
+  end
+
+  get '/sleepy' do
+    sleep 5
+    ''
+  end
 end

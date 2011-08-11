@@ -3,6 +3,7 @@
 require 'rbconfig'
 
 # ENV['TORQUEBOX_HOME'] = '/usr/local/src/download/torquebox'
+ENV['TORQUEBOX_HOME'] = '/tmp/torquebox'
 
 ENV['JRUBY_HOME'] = File.dirname Config::CONFIG['libdir']
 

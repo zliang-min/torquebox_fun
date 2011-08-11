@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    title JRuby - Have fun on JVM
+	
+    link href="css/slideshow.css" rel="stylesheet"
+    link href="css/theme.css" rel="stylesheet"
+    link href="css/jruby.slides.css" rel="stylesheet"
+    link href="prettify/prettify.css" rel="stylesheet"
+
+  body data-duration="10"
+
+    #cover.slide
+      header
+        h1
+          img src="images/jruby/jruby-logo.png" alt="JRuby"
+        h2 Have Fun on JVM
+      p.attribution By Gimi Liang, Aug 2011
+
+    .slide#what title="What is JRuby"
+      h2 What is it?
+      p.delayed
+        | 100% Pure-Java Implementation of the
+        br
+        span.red Ruby
+        |  Programming Language
+      p.delayed
+        img src="images/jruby/jruby-logo.png" alt="Ruby Programming Language"
+
+    .slide.demo title="Just Ruby"
+      h2 Demo - A Simple Ruby Program
+      p
+        code person.rb
+      pre.prettyprint
+        |
+          class Person
+            attr_accessor :name
+            def initialize(name)
+              self.name = name
+            end
+            def say_hi(anotherone)
+              puts "%s says hi to %s" % [name, anotherone.name]
+            end
+          end
+          Person.new(ARGV[0]).say_hi Person.new(ARGV[1])
+
+      p
+        code command console
+      pre.prettyprint
+        |
+          $ jruby person.rb Gimi Charles
+          Gimi says hi to Charles.
+
+    .slide
+      .centerize style="margin-top:2em"
+        h1 Thank You!
+        h2 Any Question?
+        h2.delayed Just Kidding ;)
+
+    .slide#why title="Why JRuby"
+      h2 Why use it?
+      ul
+        li.delayed
+          | It also brings you the best of the JVM
+          span.jvm
+        li.delayed High performance
+        li.delayed Real threading
+        li.delayed.list
+          | Vast array of libraries
+          ul
+            li.delayed spring
+            li.delayed hibernate
+            li.delayed Hadoop
+            li.delayed neo4j
+            li.delayed Lucene
+            li.delayed Apache POI
+            li.delayed JBoss AP (Jetty, Tomcat, GlassFish, etc)
+            li.delayed Selenium
+            li.delayed SWT (or, Swing)
+            li.delayed GWT
+            li.delayed JFreeChart
+            li.delayed VMWare vFabric - SQLFire
+            li.delayed ...
+
+    .slide title="Examples"
+      .centerize style="margin-top:2em"
+        h1 We don't just talk -
+        h1 Time For Real Code!
+
+    .slide title="Thank you"
+      .centerize style="margin-top:2em"
+        h1 Thank You!
+        h2 Time for Questions
+
+    script type="text/javascript" src="js/slideshow.js"
+    script type="text/javascript" src="prettify/prettify.js"
+    javascript:
+      new SlideShow();
+      prettyPrint();

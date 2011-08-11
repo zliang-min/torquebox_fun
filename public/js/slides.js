@@ -1,6 +1,6 @@
 (function() {
   var doc = document;
-  var disableBuilds = true;
+  var disableBuilds = false;
 
   var ctr = 0;
   var spaces = /\s+/, a1 = [''];
