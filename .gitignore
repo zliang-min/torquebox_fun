@@ -1,3 +1,4 @@
 .bundle
 vendor/bundle
+vendor/bundler
 #public/csss
