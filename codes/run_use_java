@@ -1,2 +1,2 @@
 #!/bin/bash
-jruby -J-cp .:/usr/share/scala/lib/scala-library.jar use_java.rb
+jruby --1.9 -J-cp .:/usr/share/scala/lib/scala-library.jar use_java.rb

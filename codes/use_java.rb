@@ -1,11 +1,9 @@
 # encoding: utf-8
 
-require 'benchmark'
-
 # 1st step
 require 'java'
 
-# a little helpers
+# a few little helpers
 def example(name)
   puts "Example: %s" % name
   puts '-' * 30
@@ -18,6 +16,10 @@ def try
 rescue
   puts $!
 end
+
+puts RUBY_DESCRIPTION
+
+# == Examples Start Here == #
 
 example "Use java's String instead of the Ruby one" do
   java_string = java.lang.String.new 'java_string'
@@ -45,19 +47,16 @@ example "use java interfaces" do
   class Alphabet
     include java.util.Enumeration
 
-    def initialize
-    end
-
     def has_more_elements
       @current_char != 'z'
     end
 
     def next_element
-      @current_char ? @current_char.succ! : @current_char = 'a'
+      @current_char = @current_char && @current_char.succ || 'a'
     end
   end
 
-  Alphabet.new.each { |a| print "#{a}," }; puts
+  puts Alphabet.new.map(&:to_s).inspect
 end
 
 example "alternative names for java methods" do
